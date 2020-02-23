@@ -5,15 +5,19 @@ import {useSelector, useDispatch} from 'react-redux'
 import {decrement, increment, incrementByAmount, selectCount} from 'store'
 
 // styles
-import styles from './Counter.module.css'
+import styles from './Counter.module.scss'
 
+// primary component
 export function Counter() {
     const count = useSelector(selectCount)
     const dispatch = useDispatch()
+
+    // local state
     const [incrementAmount, setIncrementAmount] = useState('2')
 
     return (
-        <div>
+        <div className={styles.counter}>
+            <h2>Counter Example (comes with template)</h2>
             <div className={styles.row}>
                 <button className={styles.button} aria-label='Increment value' onClick={() => dispatch(increment())}>
                     +
